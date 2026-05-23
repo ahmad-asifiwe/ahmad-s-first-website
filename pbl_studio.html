@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>PBL Studio</title><style>body{font-family:sans-serif;max-width:800px;margin:2rem auto;background:#f0f2f5;}</style></head>
+<body><div style="background:white;border-radius:2rem;padding:2rem;"><h1>🚀 Project-Based Learning Studio</h1>
+<p><strong>Current project:</strong> "Eco-Innovation Challenge"</p>
+<h3>📋 Tasks</h3><ul><li>✅ Research local environmental issue</li><li>⏳ Propose solution prototype</li><li>📅 Peer review (submit link below)</li></ul>
+<label>✍️ Peer feedback: <input type="text" id="peerReview" placeholder="Enter review text"></label>
+<button onclick="submitReview()">Submit review</button><p id="feedbackMsg"></p><br><a href="index.html">← Dashboard</a></div>
+<script>function submitReview(){ let txt = document.getElementById("peerReview").value; if(txt) document.getElementById("feedbackMsg").innerHTML = "✅ Thanks! Review saved: "+txt; else alert("Write feedback first"); }</script>
+</body></html>

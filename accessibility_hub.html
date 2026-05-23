@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Accessibility Hub</title><style>body{transition: all 0.2s;} .high-contrast{background:#000;color:#ff0;} .dyslexic{font-family:'OpenDyslexic',Arial;}</style></head>
+<body><div style="max-width:700px;margin:2rem auto;background:white;padding:2rem;border-radius:2rem;"><h1>♿ Accessibility Hub</h1>
+<button onclick="document.body.classList.toggle('high-contrast')">🌓 High Contrast</button>
+<button onclick="document.body.classList.toggle('dyslexic')">📖 Dyslexic Font mode</button>
+<button onclick="startVoice()">🎙️ Voice command (say 'open dashboard')</button>
+<p id="voiceStatus"></p><a href="index.html">← Home</a></div>
+<script>function startVoice(){ const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)(); recognition.onresult=(e)=>{ let cmd = e.results[0][0].transcript.toLowerCase(); if(cmd.includes("dashboard")) location.href="index.html"; else document.getElementById("voiceStatus").innerHTML = `Heard: "${cmd}"`; }; recognition.start(); }</script>
+</body></html>

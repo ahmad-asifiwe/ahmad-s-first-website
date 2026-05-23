@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Gamified Quiz</title><style>body{font-family:sans-serif;max-width:700px;margin:2rem auto;background:#faf5e8;} .quiz-card{background:#fff9ef;border-radius:2rem;padding:2rem;box-shadow;} .score{font-size:1.5rem;font-weight:bold;color:#e67e22;} button{background:#f39c12;border:none;padding:0.7rem 1.4rem;border-radius:2rem;cursor:pointer;margin-top:0.5rem;}</style></head>
+<body><div class="quiz-card"><h1>🏅 Gamified Quiz · Badges</h1><p>Score points, earn badges, keep streak!</p>
+<div id="status">⭐ Score: <span id="scoreValue">0</span> &nbsp; 🔥 Streak: <span id="streak">0</span></div>
+<div id="badgeArea">🏆 Badges: </div><hr><div id="questionText"></div><div id="optionsArea"></div>
+<button id="nextBtn">Next question</button><br><a href="index.html">🏠 Dashboard</a></div>
+<script>
+    const qbank = [
+        {text:"What is the chemical symbol for Gold?", options:["Go","Au","Ag","Fe"], correct:1},
+        {text:"Who painted the Mona Lisa?", options:["Van Gogh","Picasso","Da Vinci","Rembrandt"], correct:2},
+        {text:"What is 2⁵ ?", options:["16","32","64","25"], correct:1}
+    ];
+    let current = 0, score = 0, streak = 0, badges = [];
+    function updateUI(){ document.getElementById("scoreValue").innerText = score; document.getElementById("streak").innerText = streak; }
+    function addBadge(b){ if(!badges.includes(b)){ badges.push(b); document.getElementById("badgeArea").innerHTML = "🏆 Badges: " + badges.join(", "); } }
+    function loadQ(){
+        let q = qbank[current];
+        document.getElementById("questionText").innerHTML = q.text;
+        let cont = document.getElementById("optionsArea"); cont.innerHTML = "";
+        q.options.forEach((opt,idx)=>{
+            let btn = document.createElement("button"); btn.innerText = opt; btn.style.margin="0.5rem"; btn.onclick = ()=> check(idx, q.correct);
+            cont.appendChild(btn);
+        });
+    }
+    function check(selected, correct){
+        if(selected === correct){
+            score += 10; streak++;
+            if(streak === 2) addBadge("🔥 Hot streak");
+            if(score >= 20) addBadge("⭐ Bronze learner");
+            document.getElementById("questionText").innerHTML = "✅ Correct! +10 pts";
+        } else {
+            streak = 0;
+            document.getElementById("questionText").innerHTML = "❌ Oops! correct was: "+qbank[current].options[correct];
+        }
+        updateUI();
+        document.getElementById("nextBtn").style.display = "inline-block";
+        document.getElementById("optionsArea").innerHTML = "";
+    }
+    document.getElementById("nextBtn").onclick = ()=>{ current = (current+1)%qbank.length; loadQ(); document.getElementById("nextBtn").style.display = "none"; };
+    loadQ(); updateUI();
+</script></body></html>

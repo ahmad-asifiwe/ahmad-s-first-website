@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Teacher Planner</title><style>body{background:#f8fafc;font-family:sans-serif;max-width:900px;margin:2rem auto;}</style></head>
+<body><div style="background:white;border-radius:1.5rem;padding:2rem;"><h1>🍎 Teacher Planner</h1>
+<div><h3>📖 Today's lesson: Inquiry-based science</h3><textarea id="feedbackBox" rows="3" cols="50" placeholder="Write feedback for a student..."></textarea><br>
+<button onclick="saveFeedback()">Save feedback</button><p id="savedMsg"></p></div>
+<div><h3>📊 Class performance snapshot</h3><ul><li>Average quiz score: 78%</li><li>Top student: Alex (96%)</li><li>Intervention needed: 2 students</li></ul></div>
+<a href="index.html">← Dashboard</a></div>
+<script>function saveFeedback(){ let fb = document.getElementById("feedbackBox").value; if(fb) document.getElementById("savedMsg").innerHTML = "✅ Feedback saved: "+fb.substring(0,50)+"..."; else alert("Enter feedback"); }</script>
+</body></html>

@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Microlearning Cards</title><style>body{background:#eef2ff;display:flex;justify-content:center;align-items:center;min-height:100vh;} .card{background:white;width:350px;padding:2rem;border-radius:2rem;box-shadow;text-align:center;}</style></head>
+<body><div class="card"><h2>⏱️ 5-Min Microlearning</h2><div id="fact">JavaScript was created in 10 days.</div><button onclick="nextFact()">Next card →</button><p id="streakMsg">📅 Daily streak: 3 days</p><a href="index.html">🏠 Suite</a></div>
+<script>const facts=["Python named after Monty Python","First computer bug was a moth","HTML is not a programming language","CSS stands for Cascading Style Sheets"]; let i=0; function nextFact(){ i = (i+1)%facts.length; document.getElementById("fact").innerText = facts[i]; }</script>
+</body></html>

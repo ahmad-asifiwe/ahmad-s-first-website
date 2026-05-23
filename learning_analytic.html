@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Learning Analytics</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>body{font-family:sans-serif;max-width:1000px;margin:2rem auto;padding:1rem;} canvas{max-width:400px;margin:1rem;}</style></head>
+<body><h1>📈 Learning Analytics Dashboard</h1><p>Mastery by topic & daily study time (demo data)</p>
+<div style="display:flex;flex-wrap:wrap;"><canvas id="masteryChart" width="400" height="300"></canvas><canvas id="timeChart" width="400" height="300"></canvas></div>
+<p>📌 Adaptive recommendations: Spend more time on <strong>Algebra & Science</strong></p><a href="index.html">← Back to Suite</a>
+<script>
+    const ctx1 = document.getElementById('masteryChart').getContext('2d');
+    new Chart(ctx1, { type: 'radar', data: { labels: ['Math', 'Science', 'History', 'Coding', 'Art'], datasets: [{ label: 'Mastery %', data: [72, 48, 90, 35, 80], backgroundColor: 'rgba(54,162,235,0.2)', borderColor: '#2a5298' }] } });
+    const ctx2 = document.getElementById('timeChart').getContext('2d');
+    new Chart(ctx2, { type: 'bar', data: { labels: ['Mon','Tue','Wed','Thu','Fri','Sat'], datasets: [{ label: 'Study minutes', data: [45, 30, 60, 25, 70, 110], backgroundColor: '#f39c12' }] } });
+</script>
+</body></html>

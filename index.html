@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ahmad's first website</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, 'Segoe UI', sans-serif; }
+        body { background: #f0f7ff; padding: 2rem; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        h1 { font-size: 2.5rem; background: linear-gradient(135deg, #1e3c72, #2a5298); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.5rem; }
+        .sub { color: #2c3e66; margin-bottom: 2rem; border-left: 4px solid #2a5298; padding-left: 1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: white; border-radius: 1.5rem; padding: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: transform 0.2s ease; border: 1px solid #e2edff; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #1e293b; }
+        p { color: #475569; margin-bottom: 1.2rem; line-height: 1.4; }
+        .badge { display: inline-block; background: #e6f0ff; color: #1e3c72; border-radius: 2rem; padding: 0.2rem 0.8rem; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
+        a { text-decoration: none; font-weight: 600; color: #2a5298; border: 1px solid #2a5298; padding: 0.5rem 1rem; border-radius: 2rem; display: inline-block; transition: 0.2s; }
+        a:hover { background: #2a5298; color: white; }
+        footer { margin-top: 3rem; text-align: center; color: #5b6e8c; }
+        @media (max-width: 700px) { body { padding: 1rem; } .grid { gap: 1rem; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🎓 ahmad's first website</h1>
+    <div class="sub">6 interconnected tools for next‑gen learning & teaching — all modules linked.</div>
+    <div class="grid">
+        <div class="card"><span class="badge">🧠 adaptive AI</span><h2>Adaptive Learning</h2><p>Personalized difficulty & concept adjuster based on student answers.</p><a href="adaptive_learning.html">Launch →</a></div>
+        <div class="card"><span class="badge">🏆 gamification</span><h2>Gamified Quiz</h2><p>Points, streaks & badges to boost engagement.</p><a href="gamified_quiz.html">Play →</a></div>
+        <div class="card"><span class="badge">📊 analytics</span><h2>Learning Analytics</h2><p>Visual mastery dashboard & time tracking.</p><a href="learning_analytics.html">View →</a></div>
+        <div class="card"><span class="badge">🚀 PBL</span><h2>PBL Studio</h2><p>Project‑based learning scaffold & peer review.</p><a href="pbl_studio.html">Create →</a></div>
+        <div class="card"><span class="badge">⏱️ microlearning</span><h2>Microlearning Cards</h2><p>5‑min daily bursts with spaced repetition.</p><a href="microlearning.html">Practice →</a></div>
+        <div class="card"><span class="badge">♿ accessibility</span><h2>Accessibility Hub</h2><p>Voice input, dark mode, dyslexic font.</p><a href="accessibility_hub.html">Explore →</a></div>
+        <div class="card"><span class="badge">🍎 teacher</span><h2>Teacher Planner</h2><p>Lesson plans, feedback, and class insights.</p><a href="teacher_planner.html">Open →</a></div>
+    </div>
+    <footer>🔗 All files are fully linked — use browser back or dashboard to navigate.</footer>
+</div>
+</body>
+</html>
